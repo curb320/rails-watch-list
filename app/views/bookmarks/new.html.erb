@@ -1,0 +1,21 @@
+<h1>New Bookmark To List</h1>
+<h2><%= @list.name %>
+</h2>
+
+<body class="container">
+
+
+<%= simple_form_for([@list, @bookmark]) do |f| %>
+  <%= f.input :comment %>
+  <%= f.association :movie %>
+
+  <%= f.submit %>
+<% end %>
+
+
+<%= link_to 'back to all', lists_path %>
+
+
+</body>
+
+<% console %>

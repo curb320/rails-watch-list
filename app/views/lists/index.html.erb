@@ -1,0 +1,15 @@
+<h1>List Index</h1>
+<body>
+
+<div class="list_container">
+<ul>
+<% @lists.each do |list| %>
+<li class="card"><%= list.name %>
+<%= link_to 'details', list_path(list) %>
+</li>
+<% end %>
+</ul>
+</div>
+<%= link_to 'create New', new_list_path %>
+
+</body>
