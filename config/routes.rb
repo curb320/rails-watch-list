@@ -9,15 +9,14 @@ Rails.application.routes.draw do
   # root "posts#index"
   # resources :movies
   # resources :bookmarks
-  resources :lists do
+
+  root to: "lists#index"
+
+  resources :lists, except: :index do
     resources :bookmarks, only: [:new, :create]
   end
 
   resources :bookmarks, only: [:destroy]
-
-
-  root to: "articles#index"
-  resources :articles, except: :index
 
 
 end
