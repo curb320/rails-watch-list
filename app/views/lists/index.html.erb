@@ -1,15 +1,39 @@
-<h1>List Index</h1>
-<body>
+
+<h1>Lists Index</h1>
+<body class="fond_list_index">
+
 
 <div class="list_container">
-<ul>
+<div class='list-grid'>
 <% @lists.each do |list| %>
-<li class="card"><%= list.name %>
-<%= link_to 'details', list_path(list) %>
-</li>
-<% end %>
-</ul>
+
+
+
+
+<%= link_to list_path(list) do %>
+
+
+
+<div class="list-card">
+<div class="list-image">
+<%= image_tag('albumCover', width:'200px')%>
 </div>
+</br>
+<div class="decoration-none"><%= list.name%></div>
+</br></br>
+<div class='list-details-btn'>
+
+</div>
+</div>
+
+
+<% end %>
+
+
+<% end %>
+</div>
+</div>
+
 <%= link_to 'create New', new_list_path %>
 
 </body>

@@ -1,15 +1,26 @@
-<h1>SHOW DETAIL LIST</h1>
-Liste : <%= @list.name %>
+<div class='body-show-list justify-content-center'>
+<h1>
+<%= @list.name %>
+</h1>
 
-<ul>
+<ul class="show-list-tab list-unstyled list-grid">
 <% @bookmarks.each do |bookmark| %>
-<li><%= bookmark.comment %></li>
+
+<li class="body-show-li">
 <%= Movie.find(bookmark.movie_id).title %>
-
-
+</br>
+<p class="align-middle img-comment">
+<%= image_tag 'ocean', width:'150px' %>
+</p>
+</li>
+<li class="body-show-li">
+<%= bookmark.comment %>
+</br>
+<p class="delete-comment">
 <%= link_to "Delete", bookmark_path(bookmark),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+</p>
+</li>
 
 <% end %>
 </ul>
@@ -17,3 +28,4 @@ Liste : <%= @list.name %>
 <%= link_to 'show all', root_path %>
 
 <%= link_to 'Add a bookmark', new_list_bookmark_path(@list.id) %>
+</div>
