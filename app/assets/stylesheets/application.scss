@@ -86,3 +86,142 @@ $list-card-hover-bg: #f5f5f5;
   font-size: 1rem;
   padding: 0.5rem 1rem;
 }
+
+
+
+
+
+
+
+
+// Variables
+$card-background: #f4f4f4;
+$card-hover: #e0e0e0;
+$border-color: #ccc;
+$delete-btn-bg: #ff4d4d;
+$delete-btn-color: #fff;
+$delete-list-bg: #ff4d4d;
+
+// Page styling
+.bookmark-page {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 2rem;
+}
+
+.list-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+// Bookmark tiles container
+.bookmark-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+// Individual bookmark tile
+.bookmark-tile {
+  background-color: $card-background;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.bookmark-tile:hover {
+  background-color: $card-hover;
+}
+
+// Film section
+.bookmark-film {
+  width: 40%;
+  text-align: center;
+  padding: 1rem;
+}
+
+.bookmark-film-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.bookmark-film-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #333;
+}
+
+// Comment section
+.bookmark-comment {
+  width: 60%;
+  padding: 1rem;
+  text-align: left;
+}
+
+.bookmark-comment p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.delete-btn {
+  background-color: $delete-btn-bg;
+  color: $delete-btn-color;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.delete-btn:hover {
+  background-color: darken($delete-btn-bg, 10%);
+}
+
+// Links styling
+.links {
+  margin-top: 2rem;
+}
+
+.link-btn {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.link-btn:hover {
+  background-color: #0056b3;
+}
+
+// Delete list button
+.delete-list-btn {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.delete-list-icon {
+  vertical-align: middle;
+  margin-left: 0.5rem;
+}
+
+.delete-list-btn {
+  background-color: $delete-list-bg;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.delete-list-btn:hover {
+  background-color: darken($delete-list-bg, 10%);
+}

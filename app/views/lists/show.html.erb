@@ -1,35 +1,31 @@
-<div>
-<h1>
-<%= @list.name %>
-</h1>
+<div class="bookmark-page">
+  <h1 class="list-title"><%= @list.name %></h1>
 
-<ul>
-<% @bookmarks.each do |bookmark| %>
+  <div class="bookmark-container">
+    <% @bookmarks.each do |bookmark| %>
+      <div class="bookmark-tile">
+        <div class="bookmark-film">
+          <% movie = Movie.find(bookmark.movie_id) %>
+          <%= image_tag movie.poster_url, alt: movie.title, class: 'bookmark-film-image' %>
+          <div class="bookmark-film-title"><%= movie.title %></div>
+        </div>
+        <div class="bookmark-comment">
+          <p><%= bookmark.comment %></p>
+          <%= link_to "Delete", bookmark_path(bookmark),
+              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-btn' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
-<li>
-<%= Movie.find(bookmark.movie_id).title %>
-</br>
-<p>
+  <div class="links">
+    <%= link_to 'Show All Lists', root_path, class: 'link-btn' %>
+    <%= link_to 'Add a Bookmark', new_list_bookmark_path(@list.id), class: 'link-btn' %>
+  </div>
 
-</p>
-</li>
-<li>
-<%= bookmark.comment %>
-</br>
-<p>
-<%= link_to "Delete", bookmark_path(bookmark),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-</p>
-</li>
-
-<% end %>
-</ul>
-
-<%= link_to 'show all', root_path %>
-
-<%= link_to 'Add a bookmark', new_list_bookmark_path(@list.id) %>
+  <div class="delete-list-btn">
+    <%= link_to "Delete List", list_path(params[:id]),
+        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-list-btn' %>
+    <%= image_tag 'https://cdn.icon-icons.com/icons2/931/PNG/512/delete_remove_bin_icon-icons.com_72400.png', width: '30px', class: 'delete-list-icon' %>
+  </div>
 </div>
-
-<%= link_to "Delete list", list_path(params[:id]),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-  <%= image_tag 'https://cdn.icon-icons.com/icons2/931/PNG/512/delete_remove_bin_icon-icons.com_72400.png', width: '30px' %>
