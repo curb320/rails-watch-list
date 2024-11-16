@@ -11,87 +11,78 @@
 @import "components/index";
 @import "pages/index";
 
-$index_width: 500;
-.list_container{
-  width: $index_width;
+// Typography and colors
+$page-title-font-size: 2rem;
+$list-card-bg: #f9f9f9;
+$list-card-border: #ddd;
+$list-card-hover-bg: #f5f5f5;
+
+// Page structure
+.lists-page {
+  text-align: center;
+  font-family: Arial, sans-serif;
 }
 
-$red: #855b5b;
-.fond_list_index {
-  background-color: $red; // Using this variable
+.page-title {
+  font-size: $page-title-font-size;
+  color: #333;
+  margin-bottom: 1.5rem;
 }
 
-.list_container{
-width: 600px;
-margin: 0 auto;
+.banner-container {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-.index{
-  text-align:center;
-}
-#btn{
-  margin: 0 auto;
-  display: inline-block;
+.banner-image {
+  max-width: 100%;
+  height: auto;
 }
 
-.decoration-none{
-  text-decoration: none;
-  color: inherit;
-}
-
-.list-card{
-  position:relative;
-  width:200px;
-  height:250px;
-  background-color: rgb(213, 213, 213);
-  box-shadow: 2px 2px 5px rgb(51, 51, 51);
-  border: 1px solid black;
-  text-align:center;
-  text-decoration: none;
-
-}
-.list-grid{
+// List cards container
+.list-container {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 1rem;
-  list-style: none;
-  padding:0;
-}
-.list-image{
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 0 2rem;
   margin: 0 auto;
+  max-width: 900px;
 }
-.list-details-btn{
-  color:white;
-  background-color:black;
-  width:100px;
-  margin: 0 auto;
-}
-.list-index-btn{
+
+// List card styles
+.list-card-link {
   text-decoration: none;
-  color:inherit;
-  border-radius:3px;
-  }
-
-.body-show-list{
-  text-align:center;
-  margin-top: 50px;
-
 }
 
-.show-list-tab{
-margin-top:100px;
+.list-card {
+  background-color: $list-card-bg;
+  border: 1px solid $list-card-border;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.body-show-li{
-  margin:20px;
-  // border: 1px solid black;
-  width:300px;
-  height:250px;
+.list-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  background-color: $list-card-hover-bg;
 }
 
-.img-comment{
-
+.list-card-name {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
-.delete-comment{
 
+// Button styles
+.new-list-container {
+  margin-top: 2rem;
+}
+
+.new-list-btn {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
 }

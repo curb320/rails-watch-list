@@ -1,39 +1,22 @@
+<h1 class="page-title">Lists Index</h1>
+<body class="lists-page">
 
-<h1>Lists Index</h1>
-<body class="fond_list_index">
+  <div class="banner-container">
+    <%= image_tag 'https://cdn.pixabay.com/photo/2016/01/22/08/17/banner-1155437_960_720.png', class: 'banner-image' %>
+  </div>
 
+  <div class="list-container">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list), class: 'list-card-link' do %>
+        <div class="list-card">
+          <div class="list-card-name"><%= list.name %></div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 
-<div class="list_container">
-<%= image_tag 'https://www.pixelstalk.net/wp-content/uploads/2016/06/South-Park-Wallpapers-HD-Pictures.jpg', width:'600px' %>
-<div class='list-grid'>
-<% @lists.each do |list| %>
-
-
-
-
-<%= link_to list_path(list) do %>
-
-
-
-<div class="list-card">
-<div class="list-image">
-</div>
-</br>
-<div class="decoration-none"><%= list.name%></div>
-</br></br>
-<div class='list-details-btn'>
-
-</div>
-</div>
-
-
-<% end %>
-
-
-<% end %>
-</div>
-</div>
-
-<%= link_to 'create New', new_list_path %>
+  <div class="new-list-container">
+    <%= link_to 'Create New', new_list_path, class: 'btn btn-primary new-list-btn' %>
+  </div>
 
 </body>

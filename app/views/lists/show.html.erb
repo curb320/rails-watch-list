@@ -1,22 +1,22 @@
-<div class='body-show-list justify-content-center'>
+<div>
 <h1>
 <%= @list.name %>
 </h1>
 
-<ul class="show-list-tab list-unstyled list-grid">
+<ul>
 <% @bookmarks.each do |bookmark| %>
 
-<li class="body-show-li">
+<li>
 <%= Movie.find(bookmark.movie_id).title %>
 </br>
-<p class="align-middle img-comment">
+<p>
 
 </p>
 </li>
-<li class="body-show-li">
+<li>
 <%= bookmark.comment %>
 </br>
-<p class="delete-comment">
+<p>
 <%= link_to "Delete", bookmark_path(bookmark),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
 </p>
@@ -29,3 +29,7 @@
 
 <%= link_to 'Add a bookmark', new_list_bookmark_path(@list.id) %>
 </div>
+
+<%= link_to "Delete list", list_path(params[:id]),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+  <%= image_tag 'https://cdn.icon-icons.com/icons2/931/PNG/512/delete_remove_bin_icon-icons.com_72400.png', width: '30px' %>
