@@ -1,12 +1,13 @@
 <body class="backgroundColor">
 <div class="my-5 container d-flex justify-content-center align-items-center">
-<h1><%= @movie.title %></h1>
+<h1 style="color:white;"><%= @movie.title %></h1>
+
 </br>
-<div class="shadow p-3 mb-5 bg-body rounded">
+<div class="shadow p-3 mb-5 mx-4 bg-body rounded">
 <%= image_tag @movie.poster_url, width:'400px' %>
 </div>
 </br>
-<div style="background-color:white;">
+<div style="color:white;font-size:24px">
 <%= @movie.overview %>
 </div>
 </div>

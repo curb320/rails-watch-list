@@ -3,6 +3,8 @@
 
   <div class="bookmark-container">
     <% @bookmarks.each do |bookmark| %>
+
+
       <div class="bookmark-tile">
         <div class="bookmark-film">
           <% movie = Movie.find(bookmark.movie_id) %>
@@ -10,13 +12,19 @@
           <div class="bookmark-film-title"><%= movie.title %></div>
         </div>
         <div class="bookmark-comment">
-          <p><%= bookmark.comment %></p>
+          <p style="font-size:24px"><%= bookmark.comment %></p>
           <%= link_to "Delete", bookmark_path(bookmark),
               data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-btn' %>
         </div>
       </div>
+
+
+
     <% end %>
   </div>
+
+
+
 
   <div class="links">
     <%= link_to 'Show All Lists', root_path, class: 'link-btn' %>
