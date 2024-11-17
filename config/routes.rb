@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   end
 
   resources :bookmarks, only: [:destroy]
+resources :movies
+get '/movies/fetch', to: 'movies#fetch_movie'
 
 
 end
